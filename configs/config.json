@@ -1,0 +1,69 @@
+{
+  "training": {
+    "seed": 4000,
+    "n_epochs": 1000,
+    "z_epochs": 500,
+    "use_cuda": true,
+    "g_weight": 1.0,
+    "d_weight": 1.0,
+    "visible_devices": "0",
+    "sync_batchnorm": true,
+    "val_mode": "train",
+    "n_inner_loops": 1
+  },
+  "save": {
+    "study_name": "result_folder",
+    "output_root_dir": "result/",
+    "save_epoch_interval": 200,
+    "save_image_epoch_interval": 5,
+    "n_saved": 1,
+    "log_iter_interval": 100,
+    "n_save_images": 8,
+    "load_model_dir": "",
+    "model_savename": "",
+    "num_seed": 100
+  },
+  "dataset": {
+    "mode": "train",
+    "name": "Dataset",
+    "root_dir_path": "./data/fill_data_60000",
+    "select_slice": "flair",
+    "use_augmentation": true,
+    "batch_size": 128,
+    "num_workers": 16,
+    "image_size": 64
+  },
+  "model": {
+    "input_dim": 1,
+    "z_dim": 64,
+    "z_w_h": 1,
+    "dis_filters": [
+      32,
+      64,
+      128,
+      256,
+      512,
+      512,
+      512
+      ],
+    "gen_filters": [
+      512,
+      512,
+      256,
+      128,
+      64,
+      32,
+      16
+      ],
+    "dis_activation": "leaky_relu",
+    "gen_activation": "leaky_relu",
+    "gen_final_activation": "none",
+    "dis_spectral_norm": true,
+    "gen_spectral_norm": true,
+    "saved": false
+  },
+  "optimizer": {
+    "gen_lr": 0.0001,
+    "dis_lr": 0.00001
+  }
+}
