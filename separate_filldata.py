@@ -357,6 +357,6 @@ train_patient_paths = get_patient_paths(os.path.join(root_dir_path, 'MICCAI_BraT
 train_dataset = CKBrainMetDataset(mode='train', patient_paths=train_patient_paths, transform=val_transform, image_size=256)
 
 for i in tqdm(range(len(train_dataset))):
-    if np.count_nonzero(train_dataset[i]['image'] <= 0) <=57000:
-        os.makedirs(train_dataset[i]['path_name'].replace("brats_separated", "fill_data_57000"), exist_ok=True)
-        np.save(train_dataset[i]['path_name'].replace("brats_separated", "fill_data_57000") + '/' + train_dataset[i]['file_name'], train_dataset[i]['image'])
+    if np.count_nonzero(train_dataset[i]['image'] <= 0) <=60000:
+        os.makedirs(train_dataset[i]['path_name'].replace("brats_separated", "fill_data_60000"), exist_ok=True)
+        np.save(train_dataset[i]['path_name'].replace("brats_separated", "fill_data_60000") + '/' + train_dataset[i]['file_name'], train_dataset[i]['image'])
