@@ -1,1 +1,2 @@
 ランダムサンプリングのみやってて、潜在空間の探索はやってないです。
+あと、VAEのseparate_slice.pyで作成したデータをdataloaderのところでresizeしています。
